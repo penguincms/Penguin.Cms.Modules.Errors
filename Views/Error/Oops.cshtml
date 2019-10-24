@@ -1,0 +1,17 @@
+﻿@model AuditableError
+
+@{
+	ViewBag.Title = "Oops";
+	Layout = "_Layout";
+}
+
+<h2>Oops</h2>
+
+<h3>To view error information, please <a href="/User/Login">log in</a></h3>
+
+@if (Model.Referrer != null)
+{
+<span><a href="@Model.Referrer">Click Here</a> to return</span>
+}
+
+<span><a href="@Model.RequestUrl">Click Here</a> to try again</span>

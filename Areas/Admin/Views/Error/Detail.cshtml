@@ -1,0 +1,122 @@
+﻿@model AuditableError
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "_Layout";
+}
+
+<div class="smalltext">
+    <dl class="dl-horizontal">
+        @if (Model.Guid != null)
+		{
+        <dt>
+            @Html.DisplayNameFor(model => model.Guid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Guid)
+        </dd>
+		}
+        @if (Model.Exception != null)
+		{
+        <dt>
+            @Html.DisplayNameFor(model => model.Exception)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exception)
+        </dd>
+		}
+        @if (Model.ExceptionType != null)
+		{
+        <dt>
+            @Html.DisplayNameFor(model => model.ExceptionType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExceptionType)
+        </dd>
+		}
+        @if (Model.FormValues != null)
+		{
+        <dt>
+            @Html.DisplayNameFor(model => model.FormValues)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FormValues)
+        </dd>
+		}
+        @if (Model.InnerException != null)
+		{
+        <dt>
+            @Html.DisplayNameFor(model => model.InnerException)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InnerException)
+        </dd>
+		}
+
+        @if (Model.RawReferrer != null)
+		{
+        <dt>
+            @Html.DisplayNameFor(model => model.RawReferrer)
+        </dt>
+
+        <dd>
+            <a href="@Model.RawReferrer">@Model.RawReferrer</a>
+        </dd>
+		}
+
+        @if (Model.RawRequestUrl != null)
+		{
+        <dt>
+            @Html.DisplayNameFor(model => model.RawRequestUrl)
+        </dt>
+
+        <dd>
+            <a href="@Model.RawRequestUrl">@Model.RawRequestUrl</a>
+        </dd>
+		}
+        @if (Model.Referrer != null)
+		{
+        <dt>
+            @Html.DisplayNameFor(model => model.Referrer)
+        </dt>
+
+        <dd>
+            <a href="@Model.Referrer">@Model.Referrer</a>
+        </dd>
+		}
+        @if (Model.RequestUrl != null)
+		{
+        <dt>
+            @Html.DisplayNameFor(model => model.RequestUrl)
+        </dt>
+
+        <dd>
+            <a href="@Model.RequestUrl">@Model.RequestUrl</a>
+        </dd>
+		}
+        @if (Model.StackTrace != null)
+		{
+        <dt>
+            @Html.DisplayNameFor(model => model.StackTrace)
+        </dt>
+
+        <dd style="white-space: pre;">
+            @Html.DisplayFor(model => model.StackTrace)
+        </dd>
+		}
+        @if (Model.UserId != Guid.Empty)
+		{
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+		}
+    </dl>
+</div>

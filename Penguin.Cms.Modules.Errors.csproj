@@ -10,6 +10,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Remove="wwwroot\**\*" />
+    <PackageReference Include="Penguin.Cms.Modules.Dynamic" Version="1.0.0-63707630128" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="wwwroot\**\*" />
@@ -25,7 +26,6 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="3.0.0" />
-    <PackageReference Include="Penguin.Cms.Modules.Dynamic" Version="1.0.0" />
     <PackageReference Include="Penguin.Cms.Web.Errors" Version="1.0.0" />
     <PackageReference Include="Penguin.Web.Mvc" Version="2.0.4" />
   </ItemGroup>

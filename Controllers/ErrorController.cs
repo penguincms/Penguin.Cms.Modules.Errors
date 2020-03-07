@@ -15,20 +15,19 @@ namespace Penguin.Cms.Modules.Errors.Controllers
     [SuppressMessage("Globalization", "CA1303:Do not pass literals as localized parameters")]
     public partial class ErrorController : Controller
     {
+        private const string MISSING_PERMISSIONS_MESSAGE = "User does not have required permissions for requested URL";
         protected IRepository<AuditableError> ErrorRepository { get; set; }
         protected IUserSession UserSession { get; set; }
 
-        private const string MISSING_PERMISSIONS_MESSAGE = "User does not have required permissions for requested URL";
-
         public ErrorController(IRepository<AuditableError> errorRepository, IUserSession userSession)
         {
-            ErrorRepository = errorRepository;
-            UserSession = userSession;
+            this.ErrorRepository = errorRepository;
+            this.UserSession = userSession;
         }
 
         public new IActionResult NotFound()
         {
-            return View();
+            return this.View();
         }
 
         public ActionResult Oops(Guid errorId)

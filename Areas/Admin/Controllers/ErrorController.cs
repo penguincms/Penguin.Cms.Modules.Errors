@@ -2,7 +2,6 @@
 using Penguin.Cms.Errors;
 using Penguin.Cms.Modules.Dynamic.Areas.Admin.Controllers;
 using Penguin.Persistence.Abstractions.Interfaces;
-using Penguin.Security.Abstractions.Attributes;
 using Penguin.Security.Abstractions.Constants;
 using Penguin.Web.Security.Attributes;
 using System;
@@ -16,9 +15,12 @@ namespace Penguin.Cms.Modules.Errors.Areas.Admin.Controllers
 
         public ErrorController(IServiceProvider serviceProvider, IRepository<AuditableError> errorRepository) : base(serviceProvider)
         {
-            ErrorRepository = errorRepository;
+            this.ErrorRepository = errorRepository;
         }
 
-        public ActionResult Detail(Guid errorId) => this.View(this.ErrorRepository.Find(errorId));
+        public ActionResult Detail(Guid errorId)
+        {
+            return this.View(this.ErrorRepository.Find(errorId));
+        }
     }
 }

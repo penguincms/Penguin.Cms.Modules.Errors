@@ -13,8 +13,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Remove="wwwroot\**\*" />
-    <PackageReference Include="Penguin.Cms.Web.Errors" Version="1.0.1-T9SPWN8" />
-    <PackageReference Include="Penguin.Cms.Modules.Dynamic" Version="1.0.1-T9SPWN8" />
+    <PackageReference Include="Penguin.Cms.Web.Errors" Version="1.0.1-T9UEEAT" />
+    <PackageReference Include="Penguin.Cms.Modules.Dynamic" Version="1.0.1-T9UEEAT" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="wwwroot\**\*" />

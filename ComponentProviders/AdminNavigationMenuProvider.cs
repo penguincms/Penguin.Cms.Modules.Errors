@@ -24,7 +24,7 @@ namespace Penguin.Cms.Modules.Errors.ComponentProviders
                              Href = "/Admin/Error/List",
                              Permissions = new List<ISecurityGroupPermission>()
                              {
-                                 this.CreatePermission(SecurityRoles.SysAdmin, PermissionTypes.Read | PermissionTypes.Write)
+                                 this.CreatePermission(SecurityRoles.SYS_ADMIN, PermissionTypes.Read | PermissionTypes.Write)
                              }
                          }
                     }

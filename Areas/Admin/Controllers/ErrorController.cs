@@ -8,7 +8,7 @@ using System;
 
 namespace Penguin.Cms.Modules.Errors.Areas.Admin.Controllers
 {
-    [RequiresRole(RoleNames.SysAdmin)]
+    [RequiresRole(RoleNames.SYS_ADMIN)]
     public partial class ErrorController : ObjectManagementController<AuditableError>
     {
         protected IRepository<AuditableError> ErrorRepository { get; set; }

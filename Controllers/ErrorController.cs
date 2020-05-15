@@ -32,7 +32,7 @@ namespace Penguin.Cms.Modules.Errors.Controllers
 
         public ActionResult Oops(Guid errorId)
         {
-            if (!this.UserSession.LoggedInUser.HasRole(RoleNames.SysAdmin) && !this.HttpContext.Request.IsLocal())
+            if (!this.UserSession.LoggedInUser.HasRole(RoleNames.SYS_ADMIN) && !this.HttpContext.Request.IsLocal())
             {
                 return this.View(this.ErrorRepository.Find(errorId));
             }

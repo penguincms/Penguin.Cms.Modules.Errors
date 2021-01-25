@@ -12,7 +12,6 @@ using System.Diagnostics.CodeAnalysis;
 namespace Penguin.Cms.Modules.Errors.Controllers
 {
     [SuppressMessage("Design", "CA1054:Uri parameters should not be strings")]
-    [SuppressMessage("Globalization", "CA1303:Do not pass literals as localized parameters")]
     public partial class ErrorController : Controller
     {
         private const string MISSING_PERMISSIONS_MESSAGE = "User does not have required permissions for requested URL";

@@ -14,7 +14,7 @@
   <ItemGroup>
     <Content Remove="wwwroot\**\*" />
     <PackageReference Include="Penguin.Cms.Web.Errors" Version="5.0.2-TAA4YFP" />
-    <PackageReference Include="Penguin.Cms.Modules.Dynamic" Version="5.0.2-TAA4YFP" />
+    <PackageReference Include="Penguin.Cms.Modules.Dynamic" Version="5.0.2-TAAG11Z" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="wwwroot\**\*" />

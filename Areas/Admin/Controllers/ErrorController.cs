@@ -19,9 +19,6 @@ namespace Penguin.Cms.Modules.Errors.Areas.Admin.Controllers
             this.ErrorRepository = errorRepository;
         }
 
-        public ActionResult Detail(Guid errorId)
-        {
-            return this.View(this.ErrorRepository.Find(errorId));
-        }
+        public ActionResult Detail(Guid errorId) => this.View(this.ErrorRepository.Find(errorId));
     }
 }

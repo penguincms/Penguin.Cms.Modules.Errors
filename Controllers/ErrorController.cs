@@ -7,7 +7,6 @@ using Penguin.Security.Abstractions.Extensions;
 using Penguin.Security.Abstractions.Interfaces;
 using Penguin.Web.Mvc.Extensions;
 using System;
-using System.Diagnostics.CodeAnalysis;
 
 namespace Penguin.Cms.Modules.Errors.Controllers
 {
@@ -23,10 +22,7 @@ namespace Penguin.Cms.Modules.Errors.Controllers
             this.UserSession = userSession;
         }
 
-        public new IActionResult NotFound()
-        {
-            return this.View();
-        }
+        public new IActionResult NotFound() => this.View();
 
         public ActionResult Oops(Guid errorId)
         {

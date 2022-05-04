@@ -22,7 +22,10 @@ namespace Penguin.Cms.Modules.Errors.Controllers
             this.UserSession = userSession;
         }
 
-        public new IActionResult NotFound() => this.View();
+        public new IActionResult NotFound()
+        {
+            return this.View();
+        }
 
         public ActionResult Oops(Guid errorId)
         {
@@ -44,7 +47,7 @@ namespace Penguin.Cms.Modules.Errors.Controllers
 
         public ActionResult Unauthorized(string requestedUrl = "")
         {
-            this.ErrorRepository.TryAdd(new UnauthorizedAccessException(MISSING_PERMISSIONS_MESSAGE), false, requestedUrl);
+            _ = this.ErrorRepository.TryAdd(new UnauthorizedAccessException(MISSING_PERMISSIONS_MESSAGE), false, requestedUrl);
             return this.View();
         }
     }

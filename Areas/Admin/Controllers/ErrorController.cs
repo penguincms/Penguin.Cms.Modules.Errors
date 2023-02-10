@@ -16,12 +16,12 @@ namespace Penguin.Cms.Modules.Errors.Areas.Admin.Controllers
 
         public ErrorController(IServiceProvider serviceProvider, IRepository<AuditableError> errorRepository, IUserSession userSession) : base(serviceProvider, userSession)
         {
-            this.ErrorRepository = errorRepository;
+            ErrorRepository = errorRepository;
         }
 
         public ActionResult Detail(Guid errorId)
         {
-            return this.View(this.ErrorRepository.Find(errorId));
+            return View(ErrorRepository.Find(errorId));
         }
     }
 }

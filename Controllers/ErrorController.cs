@@ -18,37 +18,37 @@ namespace Penguin.Cms.Modules.Errors.Controllers
 
         public ErrorController(IRepository<AuditableError> errorRepository, IUserSession userSession)
         {
-            this.ErrorRepository = errorRepository;
-            this.UserSession = userSession;
+            ErrorRepository = errorRepository;
+            UserSession = userSession;
         }
 
         public new IActionResult NotFound()
         {
-            return this.View();
+            return View();
         }
 
         public ActionResult Oops(Guid errorId)
         {
-            if (!this.UserSession.LoggedInUser.HasRole(RoleNames.SYS_ADMIN) && !this.HttpContext.Request.IsLocal())
-            {
-                return this.View(this.ErrorRepository.Find(errorId));
-            }
-            else
-            {
-                return this.RedirectToRoute(new
+            return !UserSession.LoggedInUser.HasRole(RoleNames.SYS_ADMIN) && !HttpContext.Request.IsLocal()
+                ? View(ErrorRepository.Find(errorId))
+                : RedirectToRoute(new
                 {
                     controller = "error",
                     area = "admin",
                     action = "detail",
                     ErrorId = errorId
                 });
-            }
         }
 
         public ActionResult Unauthorized(string requestedUrl = "")
         {
-            _ = this.ErrorRepository.TryAdd(new UnauthorizedAccessException(MISSING_PERMISSIONS_MESSAGE), false, requestedUrl);
-            return this.View();
+            _ = ErrorRepository.TryAdd(new UnauthorizedAccessException(MISSING_PERMISSIONS_MESSAGE), false, requestedUrl);
+            return View();
+        }
+
+        public ActionResult Unauthorized(Uri requestedUrl)
+        {
+            throw new NotImplementedException();
         }
     }
 }

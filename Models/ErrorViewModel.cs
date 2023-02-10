@@ -4,6 +4,6 @@ namespace Penguin.Cms.Modules.Errors.Models
     {
         public string RequestId { get; set; } = string.Empty;
 
-        public bool ShowRequestId => !string.IsNullOrEmpty(this.RequestId);
+        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
     }
 }

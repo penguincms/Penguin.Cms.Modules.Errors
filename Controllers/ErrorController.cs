@@ -13,7 +13,9 @@ namespace Penguin.Cms.Modules.Errors.Controllers
     public partial class ErrorController : Controller
     {
         private const string MISSING_PERMISSIONS_MESSAGE = "User does not have required permissions for requested URL";
+
         protected IRepository<AuditableError> ErrorRepository { get; set; }
+
         protected IUserSession UserSession { get; set; }
 
         public ErrorController(IRepository<AuditableError> errorRepository, IUserSession userSession)

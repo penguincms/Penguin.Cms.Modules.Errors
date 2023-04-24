@@ -48,9 +48,5 @@ namespace Penguin.Cms.Modules.Errors.Controllers
             return View();
         }
 
-        public ActionResult Unauthorized(Uri requestedUrl)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
